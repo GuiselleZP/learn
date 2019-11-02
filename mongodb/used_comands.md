@@ -76,6 +76,6 @@
 	"lastName" : "Penagos" }
 	```
 
-	(link video)[https://www.youtube.com/watch?v=Apbk83XL8L8&list=PLL0TiOXBeDaj94IqckOt8M18pLlfdP9U0&index=1]
+	[link video](https://www.youtube.com/watch?v=Apbk83XL8L8&list=PLL0TiOXBeDaj94IqckOt8M18pLlfdP9U0&index=1)
 
 	min 26
