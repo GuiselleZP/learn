@@ -1,5 +1,67 @@
 # Commands used with mongoDB
 
+1. **Check what is my MongoDB version**
+	
+	```javascript
+	mongod --version
+	```
+
+1. **Check what is my version of the MongoDB shell**
+	
+	```javascript
+	mongo --version
+	```
+
+1. **Start the mongo server**
+
+	```
+	sudo mongod
+	```
+
+	To execute commands in MongoDB, you must open another console and type:
+
+	```
+	mongo
+	```
+
+	Or you can use the command:
+
+	```
+	mongo --quiet
+	```
+
+	If you show this eror: Error: couldn't connect to server 127.0.0.1:27017.
+	Follow these steps:
+
+	1. Remove .lock file
+	
+		```
+		sudo rm /var/lib/mongodb/mongod.lock
+		```
+	1. Repair the mongodb
+
+		```
+		mongod -repair
+		```
+
+	1. Start the mongo server
+
+		```
+		sudo service mongod start
+		```
+
+	1. Start the mongo client
+
+		```
+		mongo
+		```
+
+		Or you can use the command:
+
+		```
+		mongo --quiet
+		```
+
 1. **Show the created databases**
 
 	It also shows the weight and name of each database.
@@ -76,6 +138,75 @@
 	"lastName" : "Penagos" }
 	```
 
-	[link video](https://www.youtube.com/watch?v=Apbk83XL8L8&list=PLL0TiOXBeDaj94IqckOt8M18pLlfdP9U0&index=1)
+1. **Filter data from a collection**
+	
+	```
+	db.nameColection.find({condition})
+	```
 
-	min 26
+	For example:
+
+	```
+	db.customers.find({firstName: 'Lady'})
+	```
+
+	To filter a data by its ID, the correct syntax is:
+
+	```
+	db.nameColection.find({_id: ObjectId("identificationCode")})
+	```
+
+	For example:
+
+	```
+	db.customers.find({"_id" : ObjectId("5dbd0a610ded94e4ed7e456d")})
+	```
+
+1. **Modify an object in a collection**
+	
+	All object data must be rewritten.
+
+	```
+	db.nameColection.update(
+	  {condition},
+	  {update data}
+	)
+	```
+
+	For example:
+
+	```
+	db.customers.update(
+	  {lastName: 'McMillan'},
+	  {
+		firstName: 'Felipe',
+		lastName: 'Contreras',
+		gender: 'male'
+	  }
+	)
+	```
+
+1. **View objects in a collection in a more readable way**
+
+	```
+	db.nameColection.find().pretty()
+	```
+
+1. **Add data to an object in a collection**
+	
+	```
+	db.nameCollection.update(
+	  {filter},
+	  {$set: {NewData}}
+	)
+	```
+
+	For example:
+
+	```
+	db.customers.update(
+	  {_id: ObjectId("5dbd0a610ded94e4ed7e456b")},
+	  {$set: {age: 34}}
+	)
+	```
+	min 40
