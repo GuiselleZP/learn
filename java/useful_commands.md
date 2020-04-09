@@ -1,5 +1,7 @@
 # Comandos usados desde consola
 
+## Crear archivo .class
+
 1. Es necesario haber creado un archivo `.java`, luego este debe pre-compilarse
 usando el siguiente comando en consola:
 ```
@@ -23,4 +25,7 @@ pertenecientes a la misma.
 	clase _MyClass_:
 	```
 	java -cp . namePackage.MyClass
-	```
+```
+
+## Crear archivo .jar
+https://maslinux.es/como-crear-y-ejecutar-un-archivo-jar-desde-el-terminal-de-gnu-linux/
